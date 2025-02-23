@@ -7,13 +7,13 @@ import Link from "next/link";
 
 const Hero = () => (
   <section
-    className="relative h-screen flex items-center justify-center bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 overflow-hidden"
+    className="relative h-screen flex items-center justify-center bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 overflow-hidden mt-20 md:mt-0"
     id="home"
   >
     {/* Content Wrapper */}
     <div className="container mx-auto px-6 sm:px-12 flex flex-col md:flex-row items-center justify-between">
       {/* Left Side: Text */}
-      <div className="text-center md:text-left md:w-1/2 z-10">
+      <div className="text-center md:text-left md:w-1/2 z-10 relative mt-60 md:mt-0">
         {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: -100 }}
@@ -56,7 +56,7 @@ const Hero = () => (
         <img
           src="https://interviewdesk.ai/wp-content/uploads/2023/11/Mock-Interview-from-MAANG-interviewers.png" // Replace this with your actual image path
           alt="Side Image"
-          className="w-full h-auto rounded-lg object-cover mt-24"
+          className="w-full h-auto rounded-lg object-cover mt-5"
         />
       </motion.div>
     </div>

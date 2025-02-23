@@ -1,0 +1,302 @@
+/* Overall Feedback Section */
+.feedback-container {
+    padding: 60px;
+    background: linear-gradient(135deg, #f2f7ff, #e5efff); /* Elegant gradient background */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif; /* Premium, modern font */
+    color: #2d3748; /* Dark text for contrast */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  
+  /* No Feedback Message */
+  .no-feedback {
+    font-size: 22px;
+    font-weight: 600;
+    color: #4a5568;
+  }
+  
+  /* Title Section */
+  .title-section {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .congratulations {
+    font-size: 50px;
+    font-weight: 600;
+    color: #2b6cb0; /* Premium blue color */
+    animation: bounceIn 1s ease-in-out;
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .intro-text {
+    font-size: 26px;
+    font-weight: 500;
+    color: #2d3748;
+  }
+  
+  .intro-description {
+    font-size: 18px;
+    color: #4a5568;
+    margin-top: 15px;
+  }
+  
+  /* Pie Chart Section */
+  .chart-section {
+    margin-bottom: 50px;
+  }
+  
+  .pie-chart-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 650px;
+    width: 100%;
+  }
+  
+  .chart-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 20px;
+  }
+  
+  /* Accordion-style collapsible */
+  .feedback-cards {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    max-width: 1000px;
+    width: 100%;
+  }
+  
+  .accordion-item {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .accordion-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .accordion-header {
+    padding: 25px;
+    background-color: #edf2f7;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accordion-header:hover {
+    background-color: #e2e8f0;
+  }
+  
+  .accordion-content {
+    padding: 25px;
+    display: none;
+  }
+  
+  .accordion-content.open {
+    display: block;
+    animation: slideDown 0.3s ease-in-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .icon {
+    font-size: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .icon.rotate {
+    transform: rotate(180deg);
+  }
+  
+  /* Star Ratings */
+  .rating-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .star {
+    color: #ffd700;
+    font-size: 24px;
+    margin-right: 8px;
+  }
+  
+  .star.filled {
+    color: #ffd700;
+  }
+  
+  /* Feedback Content Styles */
+  .feedback-details h2 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2d3748;
+  }
+  
+  .rating {
+    background-color: #fef2f2;
+    border-left: 6px solid #e53e3e;
+    padding: 12px;
+    border-radius: 8px;
+    color: #e53e3e;
+    margin-bottom: 20px;
+  }
+  
+  .user-answer {
+    background-color: #f0f9ff;
+    border-left: 6px solid #3b82f6;
+    padding: 12px;
+    border-radius: 8px;
+    color: #3b82f6;
+    margin-bottom: 20px;
+  }
+  
+  .correct-answer {
+    background-color: #f0fff4;
+    border-left: 6px solid #68d391;
+    padding: 12px;
+    border-radius: 8px;
+    color: #68d391;
+    margin-bottom: 20px;
+  }
+  
+  .feedback {
+    background-color: #eff6ff;
+    border-left: 6px solid #63b3ed;
+    padding: 12px;
+    border-radius: 8px;
+    color: #63b3ed;
+    margin-bottom: 20px;
+  }
+  
+  .areas-of-improvement {
+    background-color: #fefcbf;
+    border-left: 6px solid #ecc94b;
+    padding: 12px;
+    border-radius: 8px;
+    color: #ecc94b;
+    margin-bottom: 20px;
+  }
+  
+  .how-to-improve {
+    background-color: #d1fae5;
+    border-left: 6px solid #48bb78;
+    padding: 12px;
+    border-radius: 8px;
+    color: #48bb78;
+    
+  }
+  
+  /* Button Styling */
+  .go-home-btn {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .go-home-btn button {
+    padding: 15px 25px;
+    background-color: #38b2ac;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .go-home-btn button:hover {
+    background-color: #2c7a7b;
+    transform: scale(1.05);
+  }
+/* Container for charts */
+.chart-section {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between; /* For side-by-side on larger screens */
+  gap: 30px; /* Space between the two graphs */
+}
+
+/* Pie chart container style */
+.pie-chart-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 650px;
+  width: 100%;
+}
+
+/* Chart title */
+.chart-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 20px;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .chart-section {
+    flex-direction: column; /* Stacks the charts vertically on mobile */
+    gap: 20px; /* Reduced gap between the charts on mobile */
+  }
+
+  /* Ensure charts take up full width on mobile */
+  .pie-chart-container {
+    max-width: 100%;
+    padding: 20px; /* Reduced padding on mobile for better fit */
+  }
+}

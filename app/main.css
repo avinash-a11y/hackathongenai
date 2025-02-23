@@ -1,0 +1,66 @@
+/* styles/Home.module.css */
+
+.hero {
+    background: url('/hero-image.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  
+  .cta-button {
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+  }
+  
+  .feature-card {
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+  }
+  
+  .testimonial-slider {
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+  }
+  
+  .testimonial {
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 300px;
+  }
+  
+  .cta {
+    background-color: #1a202c;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  

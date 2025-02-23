@@ -31,7 +31,7 @@ function Header() {
             Dashboard
           </li>
         </Link>
-        <Link href={'http://127.0.0.1:5500/index.html'}>
+        <Link href={'darling-torte-e2eaa1.netlify.app'}>
         <li
           className={`hover:text-primary hover:font-bold transition-all cursor-pointer
         ${path == '/dashboard/questions' && 'text-primary font-bold'}`}

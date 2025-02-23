@@ -15,13 +15,6 @@ function StartInterview({ params }) {
 
   useEffect(() => {
     GetInterviewDetails();
-    // Lock scrolling when the interview starts
-    document.body.style.overflow = 'hidden';
-
-    return () => {
-      // Restore scrolling when the component is unmounted or when the interview ends
-      document.body.style.overflow = 'auto';
-    };
   }, []);
 
   /**
@@ -39,8 +32,8 @@ function StartInterview({ params }) {
   };
 
   return (
-    <div>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+    <div className="h-screen overflow-y-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
         {/* Questions */}
         <QuestionsSection
           mockInterviewQuestions={mockInterviewQuestions}
@@ -54,28 +47,28 @@ function StartInterview({ params }) {
           interviewData={interviewData}
         />
       </div>
-      <div className='flex justify-end gap-6 mb-80'>
+      <div className="flex justify-end gap-6 mb-10">
         {activeQuestionIndex > 0 && (
           <Button
-          className = "bg-indigo-600 hover:bg-white hover:text-indigo-600 border-indigo-600 border-2"
+            className="bg-indigo-600 hover:bg-white hover:text-indigo-600 border-indigo-600 border-2"
             onClick={() => setActiveQuestionIndex(activeQuestionIndex - 1)}
           >
             Previous Question
           </Button>
         )}
-        {activeQuestionIndex != mockInterviewQuestions?.length - 1 && (
+        {activeQuestionIndex !== mockInterviewQuestions?.length - 1 && (
           <Button
-          className = "bg-indigo-600 hover:bg-white hover:text-indigo-600 border-indigo-600 border-2"
+            className="bg-indigo-600 hover:bg-white hover:text-indigo-600 border-indigo-600 border-2"
             onClick={() => setActiveQuestionIndex(activeQuestionIndex + 1)}
           >
             Next Question
           </Button>
         )}
-        {activeQuestionIndex == mockInterviewQuestions?.length - 1 && (
-          <Link
-            href={'/dashboard/interview/' + interviewData?.mockId + '/feedback'}
-          >
-            <Button className = "bg-indigo-600 hover:bg-white hover:text-indigo-600 border-indigo-600 border-2">End Interview</Button>
+        {activeQuestionIndex === mockInterviewQuestions?.length - 1 && (
+          <Link href={'/dashboard/interview/' + interviewData?.mockId + '/feedback'}>
+            <Button className="bg-indigo-600 hover:bg-white hover:text-indigo-600 border-indigo-600 border-2">
+              End Interview
+            </Button>
           </Link>
         )}
       </div>

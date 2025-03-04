@@ -6,8 +6,8 @@ const ChatBotWidget = () => {
     const script = document.createElement("script");
     script.innerHTML = `
       window.__ow = window.__ow || {};
-      window.__ow.organizationId = "2c866b77-c547-479a-9271-02e09ff0d4c0";
-      window.__ow.template_id = "232f7dd6-19dd-4c61-958c-41c35b0664ca";
+      window.__ow.organizationId = "d73f66e9-39db-492a-bd91-2e17c11c5734";
+      window.__ow.template_id = "fac46930-9a8b-414e-a132-26478136b7d0";
       window.__ow.integration_name = "manual_settings";
       window.__ow.product_name = "chatbot";   
       (function(n,t,c){

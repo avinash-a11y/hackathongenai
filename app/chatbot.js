@@ -1,35 +1,51 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const ChatBotWidget = () => {
+  const scriptRef = useRef(null);
+
   useEffect(() => {
-    // This script is the exact code you provided to load the ChatBot widget.
+    if (document.querySelector('script[data-chatbot-widget]')) {
+      return; // Prevent duplicate script injection
+    }
+
     const script = document.createElement("script");
-    script.innerHTML = `
-      window.__ow = window.__ow || {};
-      window.__ow.organizationId = "d73f66e9-39db-492a-bd91-2e17c11c5734";
-      window.__ow.template_id = "fac46930-9a8b-414e-a132-26478136b7d0";
-      window.__ow.integration_name = "manual_settings";
-      window.__ow.product_name = "chatbot";   
-      (function(n,t,c){
-        function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}
-        var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},
-        once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},
-        get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");
-        return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},
-        init:function(){var n=t.createElement("script");n.async=!0;n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}
-      };!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice));
-    `;
-
-    // Append the script to the document head
+    script.src = "https://cdn.openwidget.com/openwidget.js";
+    script.async = true;
+    script.dataset.chatbotWidget = "true"; // Custom attribute to identify the script
     document.head.appendChild(script);
+    scriptRef.current = script;
 
-    // Cleanup: Remove the script when the component is unmounted
+    // Initialize ChatBot settings
+    window._ow = window._ow || {};
+    window.__ow = {
+      organizationId: "e4a0d761-a2cd-4555-ad37-4e268f76c106",
+      template_id: "4808356b-827f-4e26-bf4f-a0cf2ae76a35",
+      integration_name: "manual_settings",
+      product_name: "chatbot",
+    };
+
     return () => {
-      document.head.removeChild(script);
+      if (scriptRef.current) {
+        document.head.removeChild(scriptRef.current);
+      }
     };
   }, []);
 
-  return null; // This component doesn't render anything, it just injects the script
+  return (
+    <noscript>
+      You need to{" "}
+      <a
+        href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/"
+        rel="noopener nofollow"
+      >
+        enable JavaScript
+      </a>{" "}
+      in order to use the AI chatbot tool powered by{" "}
+      <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">
+        ChatBot
+      </a>
+    </noscript>
+  );
 };
 
 export default ChatBotWidget;
